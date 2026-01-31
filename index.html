@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新竹鎮西堡・司馬庫斯 四日遊</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Leaflet GPX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#2F4F4F',
+                        beige: '#F5F5DC',
+                        alert: '#E27D60',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar for Gallery */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800 pb-20">
+
+    <!-- Hero Section -->
+    <header class="bg-forest text-beige py-12 px-6 text-center shadow-lg relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <i class="fas fa-tree text-9xl absolute -top-10 -left-10 transform rotate-12"></i>
+            <i class="fas fa-mountain text-9xl absolute -bottom-10 -right-10 transform -rotate-12"></i>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold mb-2 tracking-wide">新竹鎮西堡・司馬庫斯</h1>
+        <p class="text-lg md:text-xl font-light opacity-90">四日遊行程計畫</p>
+        <div class="mt-4 flex justify-center space-x-4 text-sm font-medium">
+            <span class="bg-beige text-forest px-3 py-1 rounded-full"><i class="far fa-calendar-alt mr-1"></i> 2026/2/22 - 2/25</span>
+            <span class="bg-beige text-forest px-3 py-1 rounded-full"><i class="fas fa-users mr-1"></i> 6人4車</span>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md overflow-x-auto whitespace-nowrap py-3 px-4 flex gap-4 text-sm font-bold border-b border-gray-200">
+        <a href="#day1" class="text-forest hover:text-alert px-2 transition-colors">Day 1 鳴鳳</a>
+        <a href="#day2" class="text-forest hover:text-alert px-2 transition-colors">Day 2 加里山</a>
+        <a href="#day3" class="text-forest hover:text-alert px-2 transition-colors">Day 3 鎮西堡</a>
+        <a href="#day4" class="text-forest hover:text-alert px-2 transition-colors">Day 4 青蛙石</a>
+        <a href="#plan-b" class="text-forest hover:text-alert px-2 transition-colors">雨備</a>
+        <a href="#checklist" class="text-forest hover:text-alert px-2 transition-colors">清單</a>
+    </nav>
+
+    <!-- Content Container -->
+    <main class="max-w-3xl mx-auto px-4 py-6 space-y-12">
+
+        <!-- Day 1 -->
+        <section id="day1" class="bg-white rounded-xl shadow-md overflow-hidden scroll-mt-20">
+            <div class="bg-forest text-beige p-4 flex justify-between items-center">
+                <h2 class="text-xl font-bold"><i class="fas fa-hiking mr-2"></i>Day 1: 鳴鳳古道暖身</h2>
+                <span class="text-sm opacity-80">2/22 (日)</span>
+            </div>
+            
+            <!-- Map -->
+            <div id="map-day1" class="h-64 w-full bg-gray-200 z-0"></div>
+
+            <div class="p-4">
+                 <!-- Gallery -->
+                <div class="flex overflow-x-auto gap-4 mb-6 no-scrollbar pb-2">
+                    <img src="./assets/img_day1_1.jpg" alt="風景 1" class="h-32 w-48 object-cover rounded-lg shadow flex-shrink-0 bg-gray-300">
+                    <img src="./assets/img_day1_2.jpg" alt="風景 2" class="h-32 w-48 object-cover rounded-lg shadow flex-shrink-0 bg-gray-300">
+                    <img src="./assets/img_day1_3.jpg" alt="風景 3" class="h-32 w-48 object-cover rounded-lg shadow flex-shrink-0 bg-gray-300">
+                </div>
+
+                <!-- Timeline -->
+                <div class="space-y-4 border-l-2 border-dashed border-gray-300 pl-4 ml-2">
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-alert h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">07:30 高雄出發</h4>
+                        <p class="text-sm text-gray-600">導航：獅潭義民廟 (車程約 3.5h)</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">11:00 獅潭老街午餐</h4>
+                        <p class="text-sm text-gray-600">必吃：仙山仙草、阿妹狗水粄</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">12:30 鳴鳳古道健行</h4>
+                        <p class="text-sm text-gray-600">來回約 3.5 小時，林相優美</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-beige border-2 border-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">17:30 入住：知泉露營區</h4>
+                        <p class="text-sm text-gray-600">車床天地特約，享受車泊之夜</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day 2 -->
+        <section id="day2" class="bg-white rounded-xl shadow-md overflow-hidden scroll-mt-20">
+            <div class="bg-forest text-beige p-4 flex justify-between items-center">
+                <h2 class="text-xl font-bold"><i class="fas fa-mountain mr-2"></i>Day 2: 台版富士山挑戰</h2>
+                <span class="text-sm opacity-80">2/23 (一)</span>
+            </div>
+
+            <!-- Map -->
+            <div id="map-day2" class="h-64 w-full bg-gray-200 z-0"></div>
+
+            <div class="p-4">
+                 <!-- Gallery -->
+                 <div class="flex overflow-x-auto gap-4 mb-6 no-scrollbar pb-2">
+                    <img src="./assets/img_day2_1.jpg" alt="風景 1" class="h-32 w-48 object-cover rounded-lg shadow flex-shrink-0 bg-gray-300">
+                    <img src="./assets/img_day2_2.jpg" alt="風景 2" class="h-32 w-48 object-cover rounded-lg shadow flex-shrink-0 bg-gray-300">
+                </div>
+
+                <!-- Timeline -->
+                <div class="space-y-4 border-l-2 border-dashed border-gray-300 pl-4 ml-2">
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">06:00 前往加里山大坪登山口</h4>
+                        <p class="text-sm text-gray-600">晨間小心濃霧</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-alert h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">07:00 加里山登山 (O型)</h4>
+                        <p class="text-sm text-gray-600">大坪 -> 杜鵑嶺 -> 三角點 -> 鐵道路。約 6 小時。</p>
+                        <p class="text-xs text-alert font-bold mt-1">Time Check: 10:30 到三角點，11:10 務必下山</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">14:00 尖石/內灣補給</h4>
+                        <p class="text-sm text-gray-600">加油、買晚餐/明日早餐/行動糧</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-beige border-2 border-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">17:00 入住：劉老村長溫泉露營區</h4>
+                        <p class="text-sm text-gray-600">有雨棚、溫泉。放鬆肌肉。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day 3 -->
+        <section id="day3" class="bg-white rounded-xl shadow-md overflow-hidden scroll-mt-20">
+            <div class="bg-forest text-beige p-4 flex justify-between items-center">
+                <h2 class="text-xl font-bold"><i class="fas fa-tree mr-2"></i>Day 3: 神木巡禮 & 秀巒漫遊</h2>
+                <span class="text-sm opacity-80">2/24 (二)</span>
+            </div>
+
+            <!-- Map -->
+            <div id="map-day3" class="h-64 w-full bg-gray-200 z-0"></div>
+
+            <div class="p-4">
+                 <!-- Gallery -->
+                 <div class="flex overflow-x-auto gap-4 mb-6 no-scrollbar pb-2">
+                    <img src="./assets/img_day3_1.jpg" alt="風景 1" class="h-32 w-48 object-cover rounded-lg shadow flex-shrink-0 bg-gray-300">
+                    <img src="./assets/img_day3_2.jpg" alt="風景 2" class="h-32 w-48 object-cover rounded-lg shadow flex-shrink-0 bg-gray-300">
+                </div>
+
+                <!-- Timeline -->
+                <div class="space-y-4 border-l-2 border-dashed border-gray-300 pl-4 ml-2">
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">07:00 前往鎮西堡</h4>
+                        <p class="text-sm text-gray-600">車程約 50-60 分鐘</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">08:10 巨木群步道 (B區)</h4>
+                        <p class="text-sm text-gray-600">國王神木、亞當夏娃神木。約 4.5~5 小時。</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">14:00 秀巒周邊漫遊</h4>
+                        <p class="text-sm text-gray-600">控溪吊橋、軍艦岩、野溪溫泉散步</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-beige border-2 border-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">16:00 續住：劉老村長</h4>
+                        <p class="text-sm text-gray-600">不需移動行李，直接泡湯</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day 4 -->
+        <section id="day4" class="bg-white rounded-xl shadow-md overflow-hidden scroll-mt-20">
+            <div class="bg-forest text-beige p-4 flex justify-between items-center">
+                <h2 class="text-xl font-bold"><i class="fas fa-camera mr-2"></i>Day 4: 雲端午餐 & 玻璃步道</h2>
+                <span class="text-sm opacity-80">2/25 (三)</span>
+            </div>
+            
+            <div class="p-4">
+                <div class="bg-beige rounded-lg p-4 mb-4 border-l-4 border-alert">
+                    <p class="text-sm text-forest font-bold"><i class="fas fa-info-circle mr-1"></i> 注意：宇老臭豆腐週二/三公休</p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="space-y-4 border-l-2 border-dashed border-gray-300 pl-4 ml-2">
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">10:30 退房 & 前往宇老</h4>
+                        <p class="text-sm text-gray-600">睡到自然醒再出發</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-alert h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">11:10 午餐：宇老觀景台</h4>
+                        <p class="text-sm text-gray-600">綠木頭景觀餐廳或周邊小吃</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">13:00 青蛙石天空步道</h4>
+                        <p class="text-sm text-gray-600">避開中午休息(11:50-12:30)。散步1小時。</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">14:30 快樂賦歸</h4>
+                        <p class="text-sm text-gray-600">返回高雄</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plan B -->
+        <section id="plan-b" class="bg-white rounded-xl shadow-md overflow-hidden scroll-mt-20">
+            <div class="bg-gray-700 text-white p-4">
+                <h2 class="text-xl font-bold"><i class="fas fa-umbrella mr-2"></i>雨天備案 (Plan B)</h2>
+            </div>
+            <div class="p-4 space-y-2">
+                <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none bg-gray-50 p-3 rounded-lg hover:bg-gray-100">
+                        <span>Day 1 獅潭/南庄</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 mt-2 p-3 bg-gray-50 rounded-lg text-sm">
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>南庄老街 (室內漫遊)：桂花巷、百年郵局。</li>
+                            <li>臺灣客家文化館 (苗栗銅鑼)：大型室內博物館，免費參觀。</li>
+                            <li>提早進駐露營區，利用涼亭/雨棚泡茶。</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none bg-gray-50 p-3 rounded-lg hover:bg-gray-100">
+                        <span>Day 2 加里山/秀巒</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 mt-2 p-3 bg-gray-50 rounded-lg text-sm">
+                        <p class="font-bold text-alert mb-2">❌ 取消登山 (危險)</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>張學良文化園區 (五峰清泉)：張學良故居、三毛夢屋。</li>
+                            <li>提早去劉老村長泡湯：半露天湯屋/大眾池有頂棚。</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none bg-gray-50 p-3 rounded-lg hover:bg-gray-100">
+                        <span>Day 3 鎮西堡/秀巒</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 mt-2 p-3 bg-gray-50 rounded-lg text-sm">
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><strong>小雨：</strong>穿雨衣可走 B 區 (樹林遮蔽)。</li>
+                            <li><strong>大雨：</strong>放棄入山。續留營區泡湯補眠，或提早去內灣/合興車站逛文創店。</li>
+                        </ul>
+                    </div>
+                </details>
+                 <details class="group">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none bg-gray-50 p-3 rounded-lg hover:bg-gray-100">
+                        <span>Day 4 宇老/青蛙石</span>
+                        <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 mt-2 p-3 bg-gray-50 rounded-lg text-sm">
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><strong>宇老起霧：</strong>至綠木頭餐廳室內用餐。</li>
+                            <li><strong>青蛙石雨大：</strong>改去北埔老街 (姜阿新洋樓、擂茶DIY)。</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Packing List -->
+        <section id="checklist" class="bg-white rounded-xl shadow-md overflow-hidden scroll-mt-20">
+            <div class="bg-alert text-white p-4">
+                <h2 class="text-xl font-bold"><i class="fas fa-clipboard-check mr-2"></i>必備物品清單</h2>
+            </div>
+            <div class="p-4">
+                <div class="space-y-2">
+                    <label class="flex items-center space-x-3 p-2 rounded hover:bg-gray-50 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
+                        <span class="text-gray-700">登山杖、登山鞋/防滑鞋</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 rounded hover:bg-gray-50 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
+                        <span class="text-gray-700">保暖衣物 (山區溫差大) & 雨具</span>
+                    </label>
+                     <label class="flex items-center space-x-3 p-2 rounded hover:bg-gray-50 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
+                        <span class="text-gray-700">車床天地會員卡 (享優惠)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 rounded hover:bg-gray-50 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
+                        <span class="text-gray-700">延長線 (營區接電)、防蚊液</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 rounded hover:bg-gray-50 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
+                        <span class="text-gray-700">泳褲/泳帽 (泡溫泉用)</span>
+                    </label>
+                     <label class="flex items-center space-x-3 p-2 rounded hover:bg-gray-50 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
+                        <span class="text-gray-700">個人藥品 (暈車、痠痛貼布)</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Map Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Helper function to init map
+            function initMap(id, gpxBtnId, gpxUrl, color) {
+                var map = L.map(id).setView([24.5, 121.1], 10); // Default center, will be overridden by fitBounds
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+
+                // Load GPX
+                new L.GPX(gpxUrl, {
+                    async: true,
+                    marker_options: {
+                        startIconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-start.png',
+                        endIconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-icon-end.png',
+                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/pin-shadow.png'
+                    },
+                    polyline_options: {
+                        color: color,
+                        opacity: 0.8,
+                        weight: 5,
+                        lineCap: 'round'
+                    }
+                }).on('loaded', function(e) {
+                    map.fitBounds(e.target.getBounds());
+                }).addTo(map);
+            }
+
+            // Initialize 3 Maps
+            // Note: Ensure strictly these files exist in ./assets/ or the map will just show empty tiles
+            initMap('map-day1', null, './assets/track_day1.gpx', '#2F4F4F'); // Forest Green
+            initMap('map-day2', null, './assets/track_day2.gpx', '#E27D60'); // Alert Orange
+            initMap('map-day3', null, './assets/track_day3.gpx', '#0000FF'); // Blue
+        });
+    </script>
+</body>
+</html>
