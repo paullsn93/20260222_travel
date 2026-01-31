@@ -22,6 +22,32 @@
             }
         }
     </script>
+
+    <style>
+        /* 醒目連結樣式 (不包含導覽列) */
+        main a {
+            background-color: #FEF3C7;
+            /* yellow-100 */
+            color: #92400E;
+            /* amber-800 */
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        main a:hover {
+            background-color: #FCD34D;
+            /* yellow-300 */
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100 font-sans text-gray-800 pb-20">
@@ -44,7 +70,7 @@
     <!-- Sticky Navigation -->
     <nav
         class="sticky top-0 z-50 bg-white shadow-md overflow-x-auto whitespace-nowrap py-3 px-4 flex justify-center gap-4 text-sm font-bold border-b border-gray-200">
-        <a href="#day1" class="text-forest hover:text-alert px-2 transition-colors">Day 1 鳴鳳</a>
+        <a href="#day1" class="text-forest hover:text-alert px-2 transition-colors">Day 1 鳴鳳古道</a>
         <a href="#day2" class="text-forest hover:text-alert px-2 transition-colors">Day 2 加里山</a>
         <a href="#day3" class="text-forest hover:text-alert px-2 transition-colors">Day 3 鎮西堡</a>
         <a href="#day4" class="text-forest hover:text-alert px-2 transition-colors">Day 4 青蛙石</a>
@@ -422,6 +448,32 @@
         </section>
 
     </main>
+
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-6 right-6 bg-alert text-white p-4 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-red-600 focus:outline-none z-50">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <script>
+        // Back to Top Logic
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 
 </html>
