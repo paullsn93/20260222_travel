@@ -464,6 +464,10 @@
                         <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
                         <span class="text-gray-700">個人藥品 (暈車、痠痛貼布)</span>
                     </label>
+                    <label class="flex items-center space-x-3 p-2 rounded hover:bg-gray-50 cursor-pointer">
+                        <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
+                        <span class="text-gray-700">每家自備椅子、茶杯和一些茶點</span>
+                    </label>
                 </div>
             </div>
         </section>
@@ -493,6 +497,118 @@
 
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <!-- Countdown Modal -->
+    <div id="countdownModal"
+        class="fixed inset-0 z-50 flex items-center justify-center invisible opacity-0 transition-opacity duration-300">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity" id="modalBackdrop"></div>
+
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-lg shadow-2xl p-8 max-w-md w-full mx-4 transform scale-95 transition-transform duration-300"
+            id="modalContent">
+            <!-- Close Button -->
+            <button id="closeModalBtn"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <!-- Countdown Section -->
+            <div class="text-center mb-6">
+                <div class="inline-block bg-forest text-beige rounded-full px-4 py-1 text-sm font-bold mb-3">
+                    <i class="fas fa-hourglass-half mr-2"></i>倒數計時
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800" id="countdownTitle">
+                    嗨! 距離出遊還剩 <span class="text-alert text-4xl mx-1" id="daysCount">?</span> 日
+                </h3>
+            </div>
+
+            <!-- Remarks Section -->
+            <div class="bg-beige rounded-lg p-4 border-l-4 border-forest">
+                <h4 class="font-bold text-forest mb-2 flex items-center">
+                    <i class="fas fa-clipboard-list mr-2"></i>備註事項：
+                </h4>
+                <div id="remarksContent"
+                    class="text-gray-700 text-base whitespace-pre-wrap leading-relaxed max-h-60 overflow-y-auto">
+                    載入中...
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <button id="closeModalBtnBottom"
+                    class="bg-forest text-beige px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all shadow-md font-bold">
+                    我知道了
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configuration
+            const TARGET_DATE = '2026-02-22T00:00:00';
+            const REMARKS_FILE = '備註.txt';
+
+            // Elements
+            const modal = document.getElementById('countdownModal');
+            const modalContent = document.getElementById('modalContent');
+            const backdrop = document.getElementById('modalBackdrop');
+            const closeBtns = [document.getElementById('closeModalBtn'), document.getElementById('closeModalBtnBottom')];
+            const daysCountEl = document.getElementById('daysCount');
+            const remarksContentEl = document.getElementById('remarksContent');
+
+            // 1. Calculate Countdown
+            const calculateCountdown = () => {
+                const now = new Date();
+                const target = new Date(TARGET_DATE);
+                const diffTime = target - now;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+                // If the date has passed, show different message or 0
+                if (diffDays < 0) {
+                    document.getElementById('countdownTitle').innerHTML = "出遊活動已結束！";
+                } else {
+                    daysCountEl.innerText = diffDays;
+                }
+            };
+
+            // 2. Fetch Remarks
+            const fetchRemarks = async () => {
+                try {
+                    const response = await fetch(REMARKS_FILE);
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    const text = await response.text();
+                    remarksContentEl.innerText = text;
+                } catch (error) {
+                    console.error('Failed to load remarks:', error);
+                    remarksContentEl.innerHTML = `<span class="text-red-500"><i class="fas fa-exclamation-triangle mr-1"></i> 無法讀取備註檔案。</span><br><br><span class="text-sm text-gray-500">如果您是直接開啟 HTML 檔案 (file://)，瀏覽器可能會阻擋讀取本機檔案。請嘗試使用 Live Server 或將檔案上傳至伺服器。</span>`;
+                }
+            };
+
+            // 3. Modal Control
+            const showModal = () => {
+                modal.classList.remove('invisible', 'opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            };
+
+            const closeModal = () => {
+                modal.classList.add('opacity-0');
+                modalContent.classList.add('scale-95');
+                modalContent.classList.remove('scale-100');
+                setTimeout(() => modal.classList.add('invisible'), 300);
+            };
+
+            // Initialize
+            calculateCountdown();
+            fetchRemarks();
+            // Show modal with a slight delay for better UX
+            setTimeout(showModal, 500);
+
+            // Event Listeners
+            closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            backdrop.addEventListener('click', closeModal);
         });
     </script>
 </body>
