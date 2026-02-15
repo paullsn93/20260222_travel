@@ -329,52 +329,44 @@
                     <i class="fas fa-tag mr-1"></i> 關鍵字：宇老觀景台、青蛙石天空步道、賦歸
                 </div>
 
+                <div class="bg-white border-l-4 border-alert p-3 mb-4 shadow-sm">
+                    <p class="text-base text-forest font-bold"><i class="fas fa-exclamation-circle mr-1"></i>
+                        注意：宇老臭豆腐週二/三公休</p>
+                </div>
+
                 <!-- Timeline -->
                 <div class="space-y-4 border-l-2 border-dashed border-gray-300 pl-4 ml-2">
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">08:30 秀巒劉老村長露營區出發</h4>
-                        <p class="text-base text-gray-600">悠閒打包行李，準備轉場。</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">09:00 抵達<a
-                                href="https://www.google.com/maps/search/?api=1&query=宇老觀景台" target="_blank"
-                                class="text-blue-600 hover:underline">宇老觀景台</a></h4>
-                        <p class="text-base text-gray-600">在此觀景拍照，欣賞最後的山巒景色。</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">09:30 抵達<a
-                                href="https://www.google.com/maps/search/?api=1&query=青蛙石天空步道售票處" target="_blank"
-                                class="text-blue-600 hover:underline">青蛙石天空步道售票處</a></h4>
-                        <p class="text-base text-gray-600">停車場：那羅部落市集旁。</p>
-                        <ul class="text-base text-gray-600 list-disc list-inside ml-1">
-                            <li>買票 (每人 100 元)</li>
-                            <li>等候接駁車入園</li>
-                        </ul>
+                        <h4 class="font-bold text-gray-900">10:30 退房 & 前往宇老</h4>
+                        <p class="text-base text-gray-600">睡到自然醒再出發，此時車流少，可慢慢開欣賞沿途風景。</p>
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-alert h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">09:40–11:20 青蛙石天空步道慢走</h4>
-                        <p class="text-base text-gray-600">享受約 1.5 小時的步道時光。特色：入口青蛙平台、森林木棧道、青蛙石與瀑布、玻璃彩虹橋與圓形觀景台。</p>
+                        <h4 class="font-bold text-gray-900">11:10 午餐：<a
+                                href="https://www.google.com/maps/search/?api=1&query=宇老觀景台" target="_blank"
+                                class="text-blue-600 hover:underline">宇老觀景台</a></h4>
+                        <ul class="text-base text-gray-600 list-disc list-inside ml-1">
+                            <li>推薦替代：<strong>綠木頭景觀餐廳</strong> (10:30營業) 或觀景台周邊小吃</li>
+                            <li>在海拔 1450m 享用午餐，俯瞰玉峰溪谷</li>
+                        </ul>
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">11:30 回到停車場，開車前往內灣</h4>
+                        <h4 class="font-bold text-gray-900">13:00 <a
+                                href="https://www.google.com/maps/search/?api=1&query=青蛙石天空步道" target="_blank"
+                                class="text-blue-600 hover:underline">青蛙石天空步道</a></h4>
+                        <ul class="text-base text-gray-600 list-disc list-inside ml-1">
+                            <li>開放時間：13:00 後下午場開始 (11:50-12:30 中午休息不開放)</li>
+                            <li>在此散步約 1 小時，欣賞彩虹瀑布與玻璃步道</li>
+                        </ul>
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">12:00 抵達內灣老街 (午餐)</h4>
-                        <p class="text-base text-gray-600">享受最後的客家美食。</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">13:30 快樂賦歸</h4>
-                        <p class="text-base text-gray-600">帶著滿滿回憶返回高雄 (預計車程 3.5 - 4 小時)。</p>
+                        <h4 class="font-bold text-gray-900">14:30 快樂賦歸</h4>
+                        <p class="text-base text-gray-600">返回高雄 (預計車程 3.5 - 4 小時)</p>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 

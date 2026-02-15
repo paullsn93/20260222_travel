@@ -259,17 +259,17 @@
                 <div class="space-y-4 border-l-2 border-dashed border-gray-300 pl-4 ml-2">
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">06:30 起床、整理裝備、早餐</h4>
+                        <h4 class="font-bold text-gray-900">06:00 起床、整理裝備、早餐</h4>
                         <p class="text-base text-gray-600">享用山林早餐，準備出發</p>
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">07:30 前往鎮西堡</h4>
+                        <h4 class="font-bold text-gray-900">07:00 前往鎮西堡</h4>
                         <p class="text-base text-gray-600">從秀巒出發，車程約 50-60 分鐘</p>
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">08:40 鎮西堡巨木群 (B區)</h4>
+                        <h4 class="font-bold text-gray-900">08:10 鎮西堡巨木群 (B區)</h4>
                         <ul class="text-base text-gray-600 list-disc list-inside ml-1">
                             <li>路線：<a href="https://www.google.com/maps/search/?api=1&query=鎮西堡巨木群登山口" target="_blank"
                                     class="text-blue-600 hover:underline">登山口</a> → 國王神木 → 亞當/夏娃神木 → 原路折返</li>
@@ -290,12 +290,12 @@
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">13:30 離開登山口</h4>
+                        <h4 class="font-bold text-gray-900">13:00 離開登山口</h4>
                         <p class="text-base text-gray-600">結束神木群健行，準備前往秀巒。</p>
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">14:30 秀巒周邊漫遊</h4>
+                        <h4 class="font-bold text-gray-900">14:00 秀巒周邊漫遊</h4>
                         <p class="text-sm font-bold text-alert mb-1">(不趕路最舒服)</p>
                         <ul class="text-base text-gray-600 list-disc list-inside ml-1">
                             <li><strong>控溪吊橋</strong>：四面環山的壯麗景色，2月可賞山景</li>
@@ -306,7 +306,7 @@
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-beige border-2 border-forest h-4 w-4 rounded-full mt-1">
                         </div>
-                        <h4 class="font-bold text-gray-900">16:30 續住：劉老村長</h4>
+                        <h4 class="font-bold text-gray-900">16:00 續住：劉老村長</h4>
                         <ul class="text-base text-gray-600 list-disc list-inside ml-1">
                             <li>不需移動行李，直接泡湯</li>
                             <li>營區有遮雨棚，晚上聊天泡茶不怕露水或下雨</li>
@@ -329,52 +329,44 @@
                     <i class="fas fa-tag mr-1"></i> 關鍵字：宇老觀景台、青蛙石天空步道、賦歸
                 </div>
 
+                <div class="bg-white border-l-4 border-alert p-3 mb-4 shadow-sm">
+                    <p class="text-base text-forest font-bold"><i class="fas fa-exclamation-circle mr-1"></i>
+                        注意：宇老臭豆腐週二/三公休</p>
+                </div>
+
                 <!-- Timeline -->
                 <div class="space-y-4 border-l-2 border-dashed border-gray-300 pl-4 ml-2">
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">08:30 秀巒劉老村長露營區出發</h4>
-                        <p class="text-base text-gray-600">悠閒打包行李，準備轉場。</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">09:00 抵達<a
-                                href="https://www.google.com/maps/search/?api=1&query=宇老觀景台" target="_blank"
-                                class="text-blue-600 hover:underline">宇老觀景台</a></h4>
-                        <p class="text-base text-gray-600">在此觀景拍照，欣賞最後的山巒景色。</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">09:30 抵達<a
-                                href="https://www.google.com/maps/search/?api=1&query=青蛙石天空步道售票處" target="_blank"
-                                class="text-blue-600 hover:underline">青蛙石天空步道售票處</a></h4>
-                        <p class="text-base text-gray-600">停車場：那羅部落市集旁。</p>
-                        <ul class="text-base text-gray-600 list-disc list-inside ml-1">
-                            <li>買票 (每人 100 元)</li>
-                            <li>等候接駁車入園</li>
-                        </ul>
+                        <h4 class="font-bold text-gray-900">10:30 退房 & 前往宇老</h4>
+                        <p class="text-base text-gray-600">睡到自然醒再出發，此時車流少，可慢慢開欣賞沿途風景。</p>
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-alert h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">09:40–11:20 青蛙石天空步道慢走</h4>
-                        <p class="text-base text-gray-600">享受約 1.5 小時的步道時光。特色：入口青蛙平台、森林木棧道、青蛙石與瀑布、玻璃彩虹橋與圓形觀景台。</p>
+                        <h4 class="font-bold text-gray-900">11:10 午餐：<a
+                                href="https://www.google.com/maps/search/?api=1&query=宇老觀景台" target="_blank"
+                                class="text-blue-600 hover:underline">宇老觀景台</a></h4>
+                        <ul class="text-base text-gray-600 list-disc list-inside ml-1">
+                            <li>推薦替代：<strong>綠木頭景觀餐廳</strong> (10:30營業) 或觀景台周邊小吃</li>
+                            <li>在海拔 1450m 享用午餐，俯瞰玉峰溪谷</li>
+                        </ul>
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">11:30 回到停車場，開車前往內灣</h4>
+                        <h4 class="font-bold text-gray-900">13:00 <a
+                                href="https://www.google.com/maps/search/?api=1&query=青蛙石天空步道" target="_blank"
+                                class="text-blue-600 hover:underline">青蛙石天空步道</a></h4>
+                        <ul class="text-base text-gray-600 list-disc list-inside ml-1">
+                            <li>開放時間：13:00 後下午場開始 (11:50-12:30 中午休息不開放)</li>
+                            <li>在此散步約 1 小時，欣賞彩虹瀑布與玻璃步道</li>
+                        </ul>
                     </div>
                     <div class="relative">
                         <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">12:00 抵達內灣老街 (午餐)</h4>
-                        <p class="text-base text-gray-600">享受最後的客家美食。</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-gray-900">13:30 快樂賦歸</h4>
-                        <p class="text-base text-gray-600">帶著滿滿回憶返回高雄 (預計車程 3.5 - 4 小時)。</p>
+                        <h4 class="font-bold text-gray-900">14:30 快樂賦歸</h4>
+                        <p class="text-base text-gray-600">返回高雄 (預計車程 3.5 - 4 小時)</p>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 
@@ -476,22 +468,6 @@
                         <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
                         <span class="text-gray-700">每家自備椅子、茶杯和一些茶點</span>
                     </label>
-                    <label class="flex items-center space-x-3 p-2 rounded hover:bg-gray-50 cursor-pointer">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-forest rounded focus:ring-forest">
-                        <span class="text-gray-700 font-bold text-forest">羅家：電瓶、桌子、微波爐</span>
-                    </label>
-                </div>
-            </div>
-        </section>
-
-        <!-- Remarks Section -->
-        <section id="remarks-section" class="bg-white rounded-xl shadow-md overflow-hidden scroll-mt-20">
-            <div class="bg-forest text-beige p-4">
-                <h2 class="text-2xl font-bold"><i class="fas fa-info-circle mr-2"></i>重要備註</h2>
-            </div>
-            <div class="p-6">
-                <div id="footerRemarksContent" class="text-gray-700 text-lg whitespace-pre-wrap leading-relaxed">
-                    載入中...
                 </div>
             </div>
         </section>
@@ -581,7 +557,6 @@
             const closeBtns = [document.getElementById('closeModalBtn'), document.getElementById('closeModalBtnBottom')];
             const daysCountEl = document.getElementById('daysCount');
             const remarksContentEl = document.getElementById('remarksContent');
-            const footerRemarksContentEl = document.getElementById('footerRemarksContent');
 
             // 1. Calculate Countdown
             const calculateCountdown = () => {
@@ -604,18 +579,10 @@
                     const response = await fetch(REMARKS_FILE);
                     if (!response.ok) throw new Error('Network response was not ok');
                     const text = await response.text();
-                    // Update both modal and footer sections
                     remarksContentEl.innerText = text;
-                    if (footerRemarksContentEl) {
-                        footerRemarksContentEl.innerText = text;
-                    }
                 } catch (error) {
                     console.error('Failed to load remarks:', error);
-                    const errorMsg = `<span class="text-red-500"><i class="fas fa-exclamation-triangle mr-1"></i> 無法讀取備註檔案。</span><br><br><span class="text-sm text-gray-500">如果您是直接開啟 HTML 檔案 (file://)，瀏覽器可能會阻擋讀取本機檔案。請嘗試使用 Live Server 或將檔案上傳至伺服器。</span>`;
-                    remarksContentEl.innerHTML = errorMsg;
-                    if (footerRemarksContentEl) {
-                        footerRemarksContentEl.innerHTML = errorMsg;
-                    }
+                    remarksContentEl.innerHTML = `<span class="text-red-500"><i class="fas fa-exclamation-triangle mr-1"></i> 無法讀取備註檔案。</span><br><br><span class="text-sm text-gray-500">如果您是直接開啟 HTML 檔案 (file://)，瀏覽器可能會阻擋讀取本機檔案。請嘗試使用 Live Server 或將檔案上傳至伺服器。</span>`;
                 }
             };
 
