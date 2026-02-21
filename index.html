@@ -278,79 +278,81 @@
                 <div class="bg-beige rounded-lg p-3 mb-4 text-sm md:text-base text-forest">
                     <i class="fas fa-tag mr-1"></i> 關鍵字：B區神木群、控溪吊橋、軍艦岩、野溪溫泉
                 </div>
-                <!-- Dynamic Weather Widget -->
-                <div class="mb-6 rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white">
-                    <a class="weatherwidget-io" href="https://forecast7.com/zh-tw/24p70121p20/jianshi-township/"
-                        data-label_1="新竹尖石" data-label_2="即時氣象預報" data-theme="pure">新竹尖石 即時氣象預報</a>
-                    <div class="px-4 py-2 text-center border-t border-gray-50 flex justify-center items-center">
-                        <a href="https://forecast7.com/zh-tw/24p70121p20/jianshi-township/" target="_blank"
-                            class="text-xs text-gray-400 font-normal hover:text-blue-500 bg-transparent shadow-none border-none p-0 flex items-center gap-1"><i
-                                class="fas fa-external-link-alt"></i>小工具沒載入？點此查看即時氣象</a>
-                    </div>
-
-
-                    <!-- Timeline -->
-                    <div class="space-y-4 border-l-2 border-dashed border-gray-300 pl-4 ml-2">
-                        <div class="relative">
-                            <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                            <h4 class="font-bold text-gray-900">06:30 起床、整理裝備、早餐</h4>
-                            <p class="text-base text-gray-600">享用山林早餐，準備出發</p>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                            <h4 class="font-bold text-gray-900">07:30 前往鎮西堡</h4>
-                            <p class="text-base text-gray-600">從秀巒出發，車程約 50-60 分鐘</p>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                            <h4 class="font-bold text-gray-900">08:40 鎮西堡巨木群 (B區)</h4>
-                            <ul class="text-base text-gray-600 list-disc list-inside ml-1">
-                                <li>路線：<a href="https://www.google.com/maps/search/?api=1&query=鎮西堡巨木群登山口"
-                                        target="_blank" class="text-blue-600 hover:underline">登山口</a> → 國王神木 → 亞當/夏娃神木 →
-                                    原路折返</li>
-                                <li>耗時：約 4.5~5 小時</li>
-                                <li>午餐：自備飯糰/麵包在森林中享用</li>
-                                <li class="mt-2 text-forest">
-                                    <a href="https://hiking.biji.co/index.php?q=trail&act=detail&id=241" target="_blank"
-                                        class="hover:text-alert mr-3"><i class="fas fa-external-link-alt"></i> 文章介紹</a>
-                                    <a href="https://hiking.biji.co/index.php?q=trail&act=gpx_detail&id=4315864"
-                                        target="_blank" class="hover:text-alert"><i class="fas fa-file-download"></i>
-                                        GPX下載</a>
-                                </li>
-                                <li class="mt-2">
-                                    <img src="./assets/img_day3_1.jpg" alt="鎮西堡巨木群"
-                                        class="rounded-lg shadow-md w-full md:w-3/4">
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                            <h4 class="font-bold text-gray-900">13:30 離開登山口</h4>
-                            <p class="text-base text-gray-600">結束神木群健行，準備前往秀巒。</p>
-                        </div>
-                        <div class="relative">
-                            <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
-                            <h4 class="font-bold text-gray-900">14:30 秀巒周邊漫遊</h4>
-                            <p class="text-sm font-bold text-alert mb-1">(不趕路最舒服)</p>
-                            <ul class="text-base text-gray-600 list-disc list-inside ml-1">
-                                <li><strong>控溪吊橋</strong>：四面環山的壯麗景色，2月可賞山景</li>
-                                <li><strong>軍艦岩</strong>：矗立在溪谷中的巨石，氣勢磅礡</li>
-                                <li>漫步時間：約 1-1.5 小時，屬於平緩的散步行程</li>
-                            </ul>
-                        </div>
-                        <div class="relative">
-                            <div
-                                class="absolute -left-[25px] bg-beige border-2 border-forest h-4 w-4 rounded-full mt-1">
-                            </div>
-                            <h4 class="font-bold text-gray-900">16:30 續住：劉老村長</h4>
-                            <ul class="text-base text-gray-600 list-disc list-inside ml-1">
-                                <li>不需移動行李，直接泡湯</li>
-                                <li>營區有遮雨棚，晚上聊天泡茶不怕露水或下雨</li>
-                                <li>晚餐：簡單自煮或從秀巒當地小吃店解決</li>
-                            </ul>
+                <!-- Custom Weather Widget -->
+                <div id="weather-jianshi-day3"
+                    class="mb-6 bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-center justify-between min-h-[80px]">
+                    <div class="animate-pulse flex space-x-4">
+                        <div class="rounded-full bg-gray-200 h-10 w-10"></div>
+                        <div class="flex-1 space-y-2 py-1">
+                            <div class="h-2 bg-gray-200 rounded w-24"></div>
+                            <div class="h-2 bg-gray-200 rounded w-16"></div>
                         </div>
                     </div>
                 </div>
+
+
+
+                <!-- Timeline -->
+                <div class="space-y-4 border-l-2 border-dashed border-gray-300 pl-4 ml-2">
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">06:30 起床、整理裝備、早餐</h4>
+                        <p class="text-base text-gray-600">享用山林早餐，準備出發</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">07:30 前往鎮西堡</h4>
+                        <p class="text-base text-gray-600">從秀巒出發，車程約 50-60 分鐘</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">08:40 鎮西堡巨木群 (B區)</h4>
+                        <ul class="text-base text-gray-600 list-disc list-inside ml-1">
+                            <li>路線：<a href="https://www.google.com/maps/search/?api=1&query=鎮西堡巨木群登山口" target="_blank"
+                                    class="text-blue-600 hover:underline">登山口</a> → 國王神木 → 亞當/夏娃神木 →
+                                原路折返</li>
+                            <li>耗時：約 4.5~5 小時</li>
+                            <li>午餐：自備飯糰/麵包在森林中享用</li>
+                            <li class="mt-2 text-forest">
+                                <a href="https://hiking.biji.co/index.php?q=trail&act=detail&id=241" target="_blank"
+                                    class="hover:text-alert mr-3"><i class="fas fa-external-link-alt"></i> 文章介紹</a>
+                                <a href="https://hiking.biji.co/index.php?q=trail&act=gpx_detail&id=4315864"
+                                    target="_blank" class="hover:text-alert"><i class="fas fa-file-download"></i>
+                                    GPX下載</a>
+                            </li>
+                            <li class="mt-2">
+                                <img src="./assets/img_day3_1.jpg" alt="鎮西堡巨木群"
+                                    class="rounded-lg shadow-md w-full md:w-3/4">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">13:30 離開登山口</h4>
+                        <p class="text-base text-gray-600">結束神木群健行，準備前往秀巒。</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-forest h-4 w-4 rounded-full mt-1"></div>
+                        <h4 class="font-bold text-gray-900">14:30 秀巒周邊漫遊</h4>
+                        <p class="text-sm font-bold text-alert mb-1">(不趕路最舒服)</p>
+                        <ul class="text-base text-gray-600 list-disc list-inside ml-1">
+                            <li><strong>控溪吊橋</strong>：四面環山的壯麗景色，2月可賞山景</li>
+                            <li><strong>軍艦岩</strong>：矗立在溪谷中的巨石，氣勢磅礡</li>
+                            <li>漫步時間：約 1-1.5 小時，屬於平緩的散步行程</li>
+                        </ul>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[25px] bg-beige border-2 border-forest h-4 w-4 rounded-full mt-1">
+                        </div>
+                        <h4 class="font-bold text-gray-900">16:30 續住：劉老村長</h4>
+                        <ul class="text-base text-gray-600 list-disc list-inside ml-1">
+                            <li>不需移動行李，直接泡湯</li>
+                            <li>營區有遮雨棚，晚上聊天泡茶不怕露水或下雨</li>
+                            <li>晚餐：簡單自煮或從秀巒當地小吃店解決</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Day 4 -->
