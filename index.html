@@ -92,17 +92,15 @@
                 <div class="bg-beige rounded-lg p-3 mb-4 text-sm md:text-base text-forest">
                     <i class="fas fa-tag mr-1"></i> 關鍵字：獅潭老街、鳴鳳古道、車泊之夜
                 </div>
-                <!-- Dynamic Weather Widget -->
-                <div class="mb-6 rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white">
-                    <a class="weatherwidget-io" href="https://forecast7.com/zh-tw/24p54120p92/shitan-township/"
-                        data-label_1="苗栗獅潭" data-label_2="即時氣象預報" data-theme="pure">苗栗獅潭 即時氣象預報</a>
-                    <script>
-                        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
-                    </script>
-                    <div class="px-4 py-2 text-center border-t border-gray-50 flex justify-center items-center">
-                        <a href="https://forecast7.com/zh-tw/24p54120p92/shitan-township/" target="_blank"
-                            class="text-xs text-gray-400 font-normal hover:text-blue-500 bg-transparent shadow-none border-none p-0 flex items-center gap-1"><i
-                                class="fas fa-external-link-alt"></i>小工具沒載入？點此查看即時氣象</a>
+                <!-- Custom Weather Widget -->
+                <div id="weather-shitan"
+                    class="mb-6 bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-center justify-between min-h-[80px]">
+                    <div class="animate-pulse flex space-x-4">
+                        <div class="rounded-full bg-gray-200 h-10 w-10"></div>
+                        <div class="flex-1 space-y-2 py-1">
+                            <div class="h-2 bg-gray-200 rounded w-24"></div>
+                            <div class="h-2 bg-gray-200 rounded w-16"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -187,14 +185,15 @@
                 <div class="bg-beige rounded-lg p-3 mb-4 text-sm md:text-base text-forest">
                     <i class="fas fa-tag mr-1"></i> 關鍵字：加里山、秀巒溫泉
                 </div>
-                <!-- Dynamic Weather Widget -->
-                <div class="mb-6 rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white">
-                    <a class="weatherwidget-io" href="https://forecast7.com/zh-tw/24p60120p99/nanzhuang-township/"
-                        data-label_1="苗栗南庄" data-label_2="即時氣象預報" data-theme="pure">苗栗南庄 即時氣象預報</a>
-                    <div class="px-4 py-2 text-center border-t border-gray-50 flex justify-center items-center">
-                        <a href="https://forecast7.com/zh-tw/24p60120p99/nanzhuang-township/" target="_blank"
-                            class="text-xs text-gray-400 font-normal hover:text-blue-500 bg-transparent shadow-none border-none p-0 flex items-center gap-1"><i
-                                class="fas fa-external-link-alt"></i>小工具沒載入？點此查看即時氣象</a>
+                <!-- Custom Weather Widget -->
+                <div id="weather-nanzhuang"
+                    class="mb-6 bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-center justify-between min-h-[80px]">
+                    <div class="animate-pulse flex space-x-4">
+                        <div class="rounded-full bg-gray-200 h-10 w-10"></div>
+                        <div class="flex-1 space-y-2 py-1">
+                            <div class="h-2 bg-gray-200 rounded w-24"></div>
+                            <div class="h-2 bg-gray-200 rounded w-16"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -365,14 +364,15 @@
                 <div class="bg-beige rounded-lg p-3 mb-4 text-sm md:text-base text-forest">
                     <i class="fas fa-tag mr-1"></i> 關鍵字：宇老觀景台、日見森嵐、玻璃平台、賦歸
                 </div>
-                <!-- Dynamic Weather Widget -->
-                <div class="mb-6 rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white">
-                    <a class="weatherwidget-io" href="https://forecast7.com/zh-tw/24p70121p20/jianshi-township/"
-                        data-label_1="新竹尖石" data-label_2="即時氣象預報" data-theme="pure">新竹尖石 即時氣象預報</a>
-                    <div class="px-4 py-2 text-center border-t border-gray-50 flex justify-center items-center">
-                        <a href="https://forecast7.com/zh-tw/24p70121p20/jianshi-township/" target="_blank"
-                            class="text-xs text-gray-400 font-normal hover:text-blue-500 bg-transparent shadow-none border-none p-0 flex items-center gap-1"><i
-                                class="fas fa-external-link-alt"></i>小工具沒載入？點此查看即時氣象</a>
+                <!-- Custom Weather Widget -->
+                <div id="weather-jianshi-day4"
+                    class="mb-6 bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-center justify-between min-h-[80px]">
+                    <div class="animate-pulse flex space-x-4">
+                        <div class="rounded-full bg-gray-200 h-10 w-10"></div>
+                        <div class="flex-1 space-y-2 py-1">
+                            <div class="h-2 bg-gray-200 rounded w-24"></div>
+                            <div class="h-2 bg-gray-200 rounded w-16"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -676,6 +676,62 @@
             closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
             backdrop.addEventListener('click', closeModal);
         });
+    </script>
+    <script>
+        // Open-Meteo Weather Logic
+        async function initWeather() {
+            const locations = [
+                { id: 'weather-shitan', lat: 24.54, lon: 120.92, label: '苗栗獅潭' },
+                { id: 'weather-nanzhuang', lat: 24.60, lon: 120.99, label: '苗栗南庄' },
+                { id: 'weather-jianshi-day3', lat: 24.70, lon: 121.20, label: '新竹尖石' },
+                { id: 'weather-jianshi-day4', lat: 24.70, lon: 121.20, label: '新竹尖石' }
+            ];
+
+            const weatherIcons = {
+                0: 'fa-sun', 1: 'fa-cloud-sun', 2: 'fa-cloud', 3: 'fa-cloud',
+                45: 'fa-smog', 48: 'fa-smog', 51: 'fa-cloud-rain', 53: 'fa-cloud-rain', 55: 'fa-cloud-rain',
+                61: 'fa-cloud-showers-heavy', 63: 'fa-cloud-showers-heavy', 65: 'fa-cloud-showers-heavy',
+                80: 'fa-cloud-showers-heavy', 81: 'fa-cloud-showers-heavy', 82: 'fa-cloud-showers-heavy',
+                95: 'fa-bolt'
+            };
+
+            const weatherDesc = {
+                0: '晴朗', 1: '晴時多雲', 2: '多雲', 3: '陰天',
+                45: '霧', 48: '霧', 51: '毛毛雨', 53: '毛毛雨', 55: '毛毛雨',
+                61: '小雨', 63: '中雨', 65: '大雨', 80: '陣雨', 81: '陣雨', 82: '強陣雨', 95: '雷雨'
+            };
+
+            for (const loc of locations) {
+                try {
+                    const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true`);
+                    const data = await res.json();
+                    const cur = data.current_weather;
+                    const icon = weatherIcons[cur.weathercode] || 'fa-cloud';
+                    const desc = weatherDesc[cur.weathercode] || '未知';
+
+                    const el = document.getElementById(loc.id);
+                    if (el) {
+                        el.innerHTML = `
+                            <div class="flex items-center gap-4">
+                                <div class="bg-beige p-3 rounded-full text-forest text-2xl w-12 h-12 flex items-center justify-center">
+                                    <i class="fas ${icon}"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 leading-tight">${loc.label} <span class="text-xs font-normal text-gray-500 ml-1">即時氣象</span></h4>
+                                    <p class="text-gray-600 text-sm">${desc} | 氣溫 ${cur.temperature}°C</p>
+                                </div>
+                            </div>
+                            <div class="text-[10px] text-gray-400 opacity-60">Open-Meteo</div>
+                        `;
+                        el.classList.remove('animate-pulse');
+                    }
+                } catch (e) {
+                    const el = document.getElementById(loc.id);
+                    if (el) el.innerHTML = '<p class="text-xs text-gray-400">氣象載入失敗</p>';
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded', initWeather);
     </script>
 </body>
 
