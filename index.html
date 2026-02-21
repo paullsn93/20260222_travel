@@ -628,6 +628,8 @@
                 // If the date has passed, show different message or 0
                 if (diffDays < 0) {
                     document.getElementById('countdownTitle').innerHTML = "出遊活動已結束！";
+                } else if (diffDays === 0) {
+                    document.getElementById('countdownTitle').innerHTML = "今日出遊";
                 } else {
                     daysCountEl.innerText = diffDays;
                 }
@@ -671,8 +673,15 @@
             // Initialize
             calculateCountdown();
             fetchRemarks();
-            // Show modal with a slight delay for better UX
-            setTimeout(showModal, 500);
+
+            // Show modal only if before 11:00 AM on the target date
+            const now = new Date();
+            const hideTime = new Date('2026-02-22T11:00:00');
+
+            if (now < hideTime) {
+                // Show modal with a slight delay for better UX
+                setTimeout(showModal, 500);
+            }
 
             // Event Listeners
             closeBtns.forEach(btn => btn.addEventListener('click', closeModal));
